@@ -43,9 +43,15 @@ async def summarize(file: UploadFile):
     # Extraire le texte du fichier
     try:
         text = extract_text_from_file(file)
+
         if len(text) > MAX_INPUT_LENGTH:
-            logger.info(f"Texte tronqué à {MAX_INPUT_LENGTH} caractères.")
+            logger.info(f"Texte trop long ({len(text)} caractères). Tronqué à {MAX_INPUT_LENGTH} caractères.")
+            # Tronquer le texte proprement à la fin de la phrase
             text = text[:MAX_INPUT_LENGTH]
+            last_period = text.rfind(".")
+            if last_period != -1:
+                text = text[:last_period + 1]
+
     except Exception as e:
         logger.error(f"Erreur lors de l'extraction du fichier : {e}")
         raise HTTPException(status_code=500, detail=f"Erreur lors de l'extraction du fichier : {e}")
