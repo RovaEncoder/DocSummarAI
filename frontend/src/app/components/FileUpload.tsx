@@ -48,20 +48,43 @@ const FileUpload: React.FC = () => {
   };
 
   return (
-    <div className="p-4 border border-gray-300 rounded-lg max-w-md mx-auto">
-      <h2 className="text-lg font-semibold mb-4">Upload de fichier</h2>
-      <input type="file" onChange={handleFileChange} className="mb-4" />
+    <div className="p-6 border border-gray-200 shadow-lg rounded-lg max-w-lg mx-auto bg-white">
+      <h2 className="text-xl font-semibold text-gray-700 mb-4">
+        Upload de fichier
+      </h2>
+      <p className="text-sm text-gray-500 mb-6">
+        Sélectionnez un fichier pour générer un résumé automatique.
+      </p>
+      <input
+        type="file"
+        onChange={handleFileChange}
+        className="mb-4 block w-full text-sm text-gray-500
+                  file:mr-4 file:py-2 file:px-4
+                  file:rounded file:border-0
+                  file:text-sm file:font-semibold
+                  file:bg-blue-50 file:text-blue-700
+                  hover:file:bg-blue-100"
+      />
       <button
         onClick={handleUpload}
-        className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 disabled:bg-gray-300"
+        className={`px-6 py-2 w-full text-white font-medium rounded ${
+          isUploading
+            ? "bg-blue-300 cursor-not-allowed"
+            : "bg-blue-500 hover:bg-blue-600"
+        }`}
         disabled={!file || isUploading}
       >
-        {isUploading ? "In progress..." : "Résumer le fichier"}
+        {isUploading ? "Génération en cours..." : "Résumer le fichier"}
       </button>
+
       {response && (
-        <div className="mt-4 p-2 border border-gray-400 rounded">
-          <p className="font-bold">Résumé :</p>
-          <pre>{response}</pre>
+        <div className="mt-6">
+          <p className="font-bold text-gray-700 mb-2">Résumé :</p>
+          <div className="p-4 bg-gray-50 border border-gray-200 rounded-lg h-48 overflow-auto">
+            <pre className="text-sm text-gray-600 whitespace-pre-wrap">
+              {response}
+            </pre>
+          </div>
         </div>
       )}
     </div>
