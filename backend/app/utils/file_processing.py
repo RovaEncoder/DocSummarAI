@@ -9,11 +9,9 @@ def extract_text_from_file(file):
         if file.filename.endswith('.txt'):
             # Lecture du fichier texte
             content = file.file.read().decode("utf-8")
-            print("Contenu brut (TXT) ===>", content)
         elif file.filename.endswith('.pdf'):
             # Lecture du fichier PDF
             reader = PdfReader(file.file)
-            print("reader====>", reader)
             for page in reader.pages:
                 page_text = page.extract_text()
                 if page_text:
@@ -21,7 +19,6 @@ def extract_text_from_file(file):
                     content += page_text + " "
             if not content.strip():
                 raise ValueError("Le fichier PDF ne contient pas de texte lisible.")
-            print("Contenu brut (PDF) ===>", content)
         else:
             raise ValueError("Format de fichier non supporté.")
 
