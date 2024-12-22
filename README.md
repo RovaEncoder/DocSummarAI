@@ -34,7 +34,7 @@ For fast answers, you can select the following options (without downloading) :
 
 ## Project Installation
 
-### Backend
+### Backend (Our summary api)
 
 1. Navigate to the backend folder:
 
