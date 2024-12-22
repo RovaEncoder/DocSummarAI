@@ -1,3 +1,5 @@
+![previw](./frontend/public/preview.png "This is a preview")
+
 # Automatic Document Summarization
 
 This project enables automatic summarization of uploaded documents. It uses FastAPI for the backend and a frontend developed with Next.js and Tailwind CSS. The summarization and rephrasing models are powered by Hugging Face.
