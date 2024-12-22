@@ -106,10 +106,10 @@ async def summarize(
     model_name = CATEGORY_MODELS[category]
     logger.info(f"Utilisation du modèle {model_name} pour la catégorie {category}.")
 
-    # Charger le modèle pour la catégorie
+    # Chargement du  modèle pour la catégorie
     summarizer = load_model(model_name, task="summarization")
 
-    # Charger le modèle de reformulation
+    # Chargement du  modèle de reformulation
     reformulator = load_model("t5-base", task="text2text-generation")
 
     # Extraction du texte du fichier
@@ -121,7 +121,7 @@ async def summarize(
         logger.error(f"Erreur lors de l'extraction du fichier : {e}")
         raise HTTPException(status_code=500, detail=f"Erreur lors de l'extraction du fichier : {e}")
 
-    # Diviser le texte en segments et générer les résumés
+    # Division du texte en segments et générer les résumés
     try:
         segments = segment_text(text, MAX_INPUT_LENGTH)
         logger.info(f"Le texte a été divisé en {len(segments)} segments.")
