@@ -74,7 +74,7 @@ This project enables automatic summarization of uploaded documents. It uses Fast
 
 ### 2. Steps to Generate a Summary
 
-1. Upload a file in `.txt` or `.pdf` format.
+1. Upload a file in `.txt` or `.pdf` format or use files test in the files_test directory.
 2. Choose an appropriate category (e.g., `general`, `science`, `finance`).
 3. Specify the minimum and maximum lengths for the summary.
 4. Click the **"Summarize File"** button.
@@ -104,7 +104,7 @@ The models used are adapted based on the selected category:
 Project available on GitHub: https://github.com/RovaEncoder/DocSummarAI
 
 ```bash
-    git clone git@github.com:RovaEncoder/DocSummarAI.git
+git clone git@github.com:RovaEncoder/DocSummarAI.git
 ```
 
 ---
