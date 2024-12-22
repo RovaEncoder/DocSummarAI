@@ -20,6 +20,14 @@ This project enables automatic summarization of uploaded documents. It uses Fast
 - **Node.js 16+** and **npm**
 - **Hugging Face model weights** (automatically downloaded during execution)
 
+### NB: There are some models which need to be download locally
+
+For fast answers, you can select the following options (without downloading) :
+
+- Technical
+- General
+- Science
+
 ---
 
 ## Project Installation

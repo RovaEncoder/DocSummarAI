@@ -153,17 +153,6 @@ async def summarize(
         combined_summary = " ".join(summaries)
         return {"summary": combined_summary}
 
-        # # Reformulation du résumé combiné
-        # try:
-        #     reformulated_summary = reformulator(
-        #         f"Reformulate this: {combined_summary}", max_length=max_length, min_length=min_length, do_sample=False
-        #     )[0]["generated_text"]
-        #     logger.info("Résumé reformulé avec succès.")
-        #     return {"summary": reformulated_summary}
-        # except Exception as e:
-        #     logger.error(f"Erreur lors de la reformulation : {e}")
-        #     raise HTTPException(status_code=500, detail="Erreur lors de la reformulation.")
-
     except Exception as e:
         logger.error(f"Erreur lors du résumé : {e}")
         raise HTTPException(status_code=500, detail=f"Erreur lors du résumé : {e}")
