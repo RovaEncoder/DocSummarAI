@@ -6,6 +6,12 @@ This project enables automatic summarization of uploaded documents. It uses Fast
 
 ---
 
+## Clone the project
+
+```bash
+git clone git@github.com:RovaEncoder/DocSummarAI.git
+```
+
 ## Key Features
 
 - Upload files in `.txt` or `.pdf` format.
@@ -106,16 +112,6 @@ The models used are adapted based on the selected category:
 | Legal     | `facebook/bart-large-cnn`       |
 | News      | `sshleifer/distilbart-cnn-12-6` |
 | Technical | `t5-small`                      |
-
----
-
-## Contributions
-
-Project available on GitHub: https://github.com/RovaEncoder/DocSummarAI
-
-```bash
-git clone git@github.com:RovaEncoder/DocSummarAI.git
-```
 
 ---
 
